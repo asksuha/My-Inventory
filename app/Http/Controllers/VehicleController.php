@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Vehicle;
+
 class VehicleController extends Controller
 {
     //buat function index
@@ -37,5 +38,41 @@ class VehicleController extends Controller
 
        return redirect('/vehicles');
    }
+
+
+   public function show(Vehicle $vehicle)  //laravel model binding, auto cari. x mcm laravel 5
+   {
+    return view('vehicles.show', compact('vehicle'));
+   }
+
+   public function edit(Vehicle $vehicle)  //laravel model binding, auto cari. x mcm laravel 5
+   {
+    return view('vehicles.edit', compact('vehicle'));
+   }
+
+ public function update(Request $request, Vehicle $vehicles)   //$vehicles ikut apa yg kita declare dekatsini 
+   {
+    //store in the table inventoriesusing model 
+    // POPO - olain old object
+  
+    $vehicles->jenis = $request->jenis;
+    $vehicles->model = $request->model;
+     $vehicles->color = $request->color;
+      $vehicles->plat_no = $request->plat_no;
+       $vehicles->save();
+
+       return redirect('/vehicles');
+   }
+
+   public function destroy(Request $request, Vehicle $vehicle)  
+   {
+    // delete  using model
+    $vehicle->delete();
+     
+    //return 
+    return redirect('/vehicles');
+
+   }
+
 }
 

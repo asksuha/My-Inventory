@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('color')->nullable();
             $table->string('plat_no');
             $table->timestamps();
+            $table->softDeletes(); // soft delete 
         });
     }
 

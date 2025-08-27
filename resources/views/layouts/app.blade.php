@@ -39,6 +39,14 @@
                           <a class="nav-link" href="{{ route('inventories.create') }}">Inventory Create</a>
                     </li>
 
+                    <li class="nav-item">
+                          <a class="nav-link" href="{{ route('vehicles.index') }}">Vehicle Index</a>
+                    </li>
+
+                    <li class="nav-item">
+                          <a class="nav-link" href="{{ route('vehicles.create') }}">Vehicle Create</a>
+                    </li>
+
                     </ul>
 
                     <!-- Right Side Of Navbar -->
