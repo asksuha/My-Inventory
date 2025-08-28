@@ -7,7 +7,13 @@ use App\Models\Vehicle;
 
 class VehicleController extends Controller
 {
-    //buat function index
+  // function untuk middleware , login sahaja boleh guna 
+  public function __construct()
+  {
+    $this->middleware('auth');
+  }
+  
+  //buat function index
     public function index()
     {
 // query from table  inventories using model 
