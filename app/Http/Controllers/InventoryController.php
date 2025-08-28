@@ -77,10 +77,15 @@ public function update(Request $request, Inventory $inventory)
 public function destroy(Request $request, Inventory $inventory)  
 {
     // delete  using model
+    
+    $this->authorize('update', $inventory);
+
     $inventory->delete();
+    
      
     //return 
-    return redirect('/inventories');
+    //return redirect('/inventories');
+    return view('inventories.edit', compact('inventory'));
 
   }
    

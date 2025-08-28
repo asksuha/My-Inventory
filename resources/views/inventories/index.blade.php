@@ -39,11 +39,12 @@
                                       @can('view', $inventory) 
                                           <a href="{{ route('inventories.edit', $inventory) }}" 
                                            class="btn btn-info btn-sm">EDIT</a>@endcan
-                                           
 
+                                        @can('view', $inventory) 
                                             <a href="{{ route('inventories.destroy', $inventory) }}" 
                                            class="btn btn-info btn-sm"
                                            onclick="confirm('Are you sure want to delete?') || event.preventDefault();">DELETE</a>
+                                           @endcan
                                     </td>
 
                                     <td><a href="{{ route('inventories.show', $inventory) }}" class="btn-secondary btn-sm">Show</a></td>
