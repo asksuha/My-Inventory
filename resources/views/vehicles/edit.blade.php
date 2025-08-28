@@ -9,7 +9,7 @@
              <div class="card-header">{{ __('Vehicle Edit') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="/vehicles/store">
+                    <form method="POST" action="">
                         @csrf
 
                         <div class="mb-3">
@@ -36,7 +36,7 @@
                         <a
                           href="{{ route('vehicles.index') }}"
                            class="btn btn-secondary">Back to Index</a>
-                           
+
                         <button type="submit" class="btn btn-primary">Update</button>
                     </form> 
                 </div>

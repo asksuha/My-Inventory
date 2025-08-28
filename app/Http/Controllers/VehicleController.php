@@ -40,6 +40,7 @@ class VehicleController extends Controller
     $vehicles->model = $request->model;
      $vehicles->color = $request->color;
       $vehicles->plat_no = $request->plat_no;
+      $vehicles->user_id = auth()->user()->id;
        $vehicles->save();
 
        return redirect('/vehicles');
@@ -65,6 +66,7 @@ class VehicleController extends Controller
     $vehicles->model = $request->model;
      $vehicles->color = $request->color;
       $vehicles->plat_no = $request->plat_no;
+      $vehicles->user_id = auth()->user()->id;
        $vehicles->save();
 
        return redirect('/vehicles');
@@ -81,4 +83,6 @@ class VehicleController extends Controller
    }
 
 }
+
+
 

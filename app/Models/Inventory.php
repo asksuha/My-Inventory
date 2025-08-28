@@ -17,12 +17,12 @@ class Inventory extends Model
          return $this->belongsTo(User::class);
     }
 
-    public function getNameAttribute($value) //yg ni gether
+    public function getNameAttribute($value) //yg ni getter
     {
          return strtoupper($value);
     }
 
-    public function setNameAttribute($value) // yg ni center 
+    public function setNameAttribute($value) // yg ni setter
     {
          $this->attributes['name'] = strtoupper($value);
     }

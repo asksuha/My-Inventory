@@ -23,6 +23,9 @@ class VehicleFactory extends Factory
                 'jenis' => $this->faker->word(), //ni panggil class yg sudah build in
                 'model' => $this->faker->word(),
                 'color' => $this->faker->safeColorName(),
+                 'user_id' => \App\Models\User::factory(),
+               // 'user_id' => \App\Models\User::inRandomOrder()->first()->id() ?? \App\Models\User::factory(),
+
                 
             ];
     }

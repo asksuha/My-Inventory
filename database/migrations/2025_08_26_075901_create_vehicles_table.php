@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('model');
             $table->string('color')->nullable();
             $table->string('plat_no');
+            $table->foreignId('user_id')->constrained()->onDate('cascade');
             $table->timestamps();
             $table->softDeletes(); // soft delete 
         });

@@ -16,6 +16,7 @@
                                 <th>Model</th>
                                  <th>Color</th>
                                 <th>Plat No</th>
+                                <th>ID</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -27,6 +28,7 @@
                                      <td>{{ $vehicle->model }}</td>
                                       <td>{{ $vehicle->color }}</td>
                                     <td>{{ $vehicle->plat_no }}</td>  
+                                    <td>{{ $vehicle->user->name }} - {{ $vehicle->user->email }} </td>
                                     <td>
                                     <a href="{{ route('vehicles.show', $vehicle) }}" class="btn btn-secondary btn-sm">Show</a>
                                     <a href="{{ route('vehicles.edit', $vehicle) }}" class="btn btn-secondary btn-sm">Edit</a>
