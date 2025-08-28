@@ -35,13 +35,13 @@ class VehicleController extends Controller
    {
     //store in the table inventoriesusing model 
     // POPO - olain old object
-    $vehicles = new Vehicle();
-    $vehicles->jenis = $request->jenis;
-    $vehicles->model = $request->model;
-     $vehicles->color = $request->color;
-      $vehicles->plat_no = $request->plat_no;
-      $vehicles->user_id = auth()->user()->id;
-       $vehicles->save();
+    $vehicle = new Vehicle();
+    $vehicle->jenis = $request->jenis;
+    $vehicle->model = $request->model;
+     $vehicle->color = $request->color;
+      $vehicle->plat_no = $request->plat_no;
+      $vehicle->user_id = auth()->user()->id;
+       $vehicle->save();
 
        return redirect('/vehicles');
    }
@@ -57,17 +57,16 @@ class VehicleController extends Controller
     return view('vehicles.edit', compact('vehicle'));
    }
 
- public function update(Request $request, Vehicle $vehicles)   //$vehicles ikut apa yg kita declare dekatsini 
+ public function update(Request $request, Vehicle $vehicle)   //$vehicles ikut apa yg kita declare dekatsini 
    {
     //store in the table inventoriesusing model 
     // POPO - olain old object
-  
-    $vehicles->jenis = $request->jenis;
-    $vehicles->model = $request->model;
-     $vehicles->color = $request->color;
-      $vehicles->plat_no = $request->plat_no;
-      $vehicles->user_id = auth()->user()->id; //inipanggil parameter utk update
-       $vehicles->save();
+    $vehicle->jenis = $request->jenis;
+    $vehicle->model = $request->model;
+     $vehicle->color = $request->color;
+      $vehicle->plat_no = $request->plat_no;
+      //$vehicle->user_id = auth()->user()->id; //inipanggil parameter utk update
+       $vehicle->save();
 
        return redirect('/vehicles');
    }

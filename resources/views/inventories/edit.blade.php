@@ -37,6 +37,7 @@
                            class="btn btn-secondary">Back to Index</a>
 
                         <button type="submit" class="btn btn-primary">Edit Inventory</button>
+
                     </form> 
                 </div>
               

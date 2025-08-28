@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Inventory;
+use App\Jobs\InventoryCreatedJob;
 
 class InventoryController extends Controller
 {
@@ -41,6 +42,8 @@ class InventoryController extends Controller
       $inventory->user_id = auth()->user()->id;
        $inventory->save();
 
+       InventoryCreatedJob::dispatch($inventory); //queue job
+
        return redirect('/inventories');
    }
 
@@ -66,7 +69,7 @@ public function update(Request $request, Inventory $inventory)
     $inventory->name = $request->name;
      $inventory->quantity = $request->quantity;
      $inventory->color = $request->color;
-      $inventory->serial_no = $request->serial_no;
+    $inventory->serial_no = $request->serial_no;
      $inventory->save();
 
     return redirect('/inventories');
