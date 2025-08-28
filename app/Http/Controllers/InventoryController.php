@@ -46,11 +46,16 @@ class InventoryController extends Controller
 
    public function show(Inventory $inventory)  //laravel model binding, auto cari. x mcm laravel 5
    {
+    
+    $this->authorize('view', $inventory); //untuk athorise polisi pengguna 
     return view('inventories.show', compact('inventory'));
+
+    
    }
 
    public function edit(Inventory $inventory)  //laravel model binding, auto cari. x mcm laravel 5
    {
+    $this->authorize('update', $inventory);
     return view('inventories.edit', compact('inventory'));
    }
 

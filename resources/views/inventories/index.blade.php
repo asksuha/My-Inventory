@@ -29,18 +29,23 @@
                                     <td>{{ $inventory->serial_no }}</td>
                                     <td>{{ $inventory->color }}</td>
                                     <td>{{ $inventory->user->name }} - {{ $inventory->user->email }} </td>
-
+             
                                     <td>
-                                        <a href="{{ route('inventories.show', $inventory) }}" 
+                                      @can('view', $inventory)   
+                                      <a href="{{ route('inventories.show', $inventory) }}" 
                                            class="btn btn-info btn-sm">SHOW</a>
+                                            @endcan
 
+                                      @can('view', $inventory) 
                                           <a href="{{ route('inventories.edit', $inventory) }}" 
-                                           class="btn btn-info btn-sm">EDIT</a>
+                                           class="btn btn-info btn-sm">EDIT</a>@endcan
+                                           
 
                                             <a href="{{ route('inventories.destroy', $inventory) }}" 
                                            class="btn btn-info btn-sm"
                                            onclick="confirm('Are you sure want to delete?') || event.preventDefault();">DELETE</a>
                                     </td>
+
                                     <td><a href="{{ route('inventories.show', $inventory) }}" class="btn-secondary btn-sm">Show</a></td>
                                 </tr>
                             @endforeach
